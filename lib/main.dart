@@ -1,8 +1,7 @@
-import 'package:componentes/src/pages/alert.dart';
-import 'package:componentes/src/pages/avatar.dart';
-import 'package:componentes/src/pages/home_page.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 
+import 'package:componentes/src/pages/alert.dart';
+import 'package:componentes/src/routes/routes.dart';
 
 void main() => runApp(MyApp());
  
@@ -14,11 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Componentes App',
       // home: HomePage(),
       initialRoute: '/',
-      routes: <String, WidgetBuilder>{
-        '/' : (BuildContext context) => HomePage(),
-        'alert' : (BuildContext context) => AlertPage(),
-        'avatar' : (BuildContext context) => AvatarPage(),
-      },
+      routes: getAppLocationRoutes(),
       onGenerateRoute: (RouteSettings settings){
 
         print('Ruta llamada: ${settings.name}');
